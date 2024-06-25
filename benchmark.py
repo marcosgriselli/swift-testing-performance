@@ -73,13 +73,14 @@ def _benchmark_tests(test_count: int, runs: int) -> None:
         print(f"XCTest: {xctest_command}")
         return
 
+    cleanup_command = "rm -rf ~/Library/Developer/Xcode/DerivedData/CompilePerformance-* && xcodebuild clean -project CompilePerformance/CompilePerformance.xcodeproj || true"
     subprocess.run(
         [
             hyperfine,
             "--runs",
             str(runs),
             "--prepare",
-            "rm -rf ~/Library/Developer/Xcode/DerivedData/CompilePerformance-* && xcodebuild clean -project CompilePerformance/CompilePerformance.xcodeproj|| true",
+            cleanup_command,
             "--command-name",
             f"XCTest ({test_count} tests)",
             xctest_command,
