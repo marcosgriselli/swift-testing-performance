@@ -31,3 +31,6 @@ playground.xcworkspace
 
 .build/
 
+# Ignore script generated files
+CompilePerformance/SwiftTestingTests/SwiftTestingTests.swift
+CompilePerformance/XCTestTests/XCTestTests.swift
