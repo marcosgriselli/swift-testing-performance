@@ -12,11 +12,15 @@ Use the benchmark script with the number of tests cases and runs (defaults to 3)
 
 #### Test file distribution
 
-To better simulate a real codebase scenario the benchmarks support diving the total test count in up to 10 files with the `--test_files` flag.
+To better simulate a real test suite scenario the benchmark script support distributing the total test count in up to 10 files with the `--test_files` flag.
+
+```bash
+./benchmark.py --test_count 1000 --test_files 10
+```
 
 ### Generated tests
 
-The generated tests will follow this format and inclued as many test cases in a single suite as passed via `--test_cases`
+The generated tests will follow this format and distribute the tests passed in `--test_count` in the number of files passed in `--test_files`:
 
 **Swift Testing:**
 
