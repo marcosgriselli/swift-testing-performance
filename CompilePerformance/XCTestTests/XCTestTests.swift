@@ -6,4 +6,4 @@ final class XCTestTests: XCTestCase {
     func testExample0() {
         XCTAssert(0 == 0)
     }
-    }
+}

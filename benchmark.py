@@ -21,7 +21,7 @@ final class XCTestTests: XCTestCase {{
     func testExample{i}() {{
         XCTAssert({i} == {i})
     }}
-    """
+"""
             )
         f.write("}\n")
 
@@ -43,21 +43,23 @@ struct SwiftTestingTests {{
     func testExample{i}() {{
         #expect({i} == {i})
     }}
-    """
+"""
             )
         f.write("}\n")
 
 
-def _benchmark_tests(test_count: int) -> None:
+def _xcodebuild_command(scheme: str) -> str:
     project = "-project CompilePerformance/CompilePerformance.xcodeproj"
-    # Make it a function that retuns the command
     destination = "-destination 'platform=iOS Simulator,name=iPhone 15,OS=18.0'"
-    swift_testing_command = (
-        f"xcodebuild {project} -scheme SwiftTestingTests {destination} build"
-    )
+    return f"xcodebuild {project} -scheme {scheme} {destination} build"
+
+
+def _benchmark_tests(test_count: int) -> None:
     _generate_swift_testing_tests(test_count)
-    xctest_command = f"xcodebuild {project} -scheme XCTestTests {destination} build"
     _generate_xctest_tests(test_count)
+
+    swift_testing_command = _xcodebuild_command("SwiftTestingTests")
+    xctest_command = _xcodebuild_command("XCTestTests")
 
     subprocess.run(
         [
@@ -67,10 +69,10 @@ def _benchmark_tests(test_count: int) -> None:
             "--prepare",
             "rm -rf ~/Library/Developer/Xcode/DerivedData",
             "--command-name",
-            "SwiftTesting",
+            f"SwiftTesting ({test_count} tests)",
             swift_testing_command,
             "--command-name",
-            "XCTest",
+            f"XCTest ({test_count} tests)",
             xctest_command,
         ]
     )

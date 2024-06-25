@@ -7,4 +7,4 @@ struct SwiftTestingTests {
     func testExample0() {
         #expect(0 == 0)
     }
-    }
+}
