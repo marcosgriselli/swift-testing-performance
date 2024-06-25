@@ -13,6 +13,7 @@ Use the benchmark script with the number of tests cases and runs (defaults to 3)
 ### Generated tests
 
 The generated tests will follow this format and inclued as many test cases in a single suite as passed via `--test_cases`
+
 **Swift Testing:**
 
 ```swift
@@ -23,6 +24,7 @@ struct SwiftTestingTests {
     func testExample1() {
         #expect(1 == 1)
     }
+}
 ```
 
 **XCTest:**
