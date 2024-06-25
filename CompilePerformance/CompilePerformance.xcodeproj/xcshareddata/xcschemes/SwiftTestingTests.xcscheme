@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1600"
-   version = "1.7">
+   version = "2.2">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -19,10 +30,10 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0C6D2F342C29DDEF0095C403"
-               BuildableName = "PerformanceTests.xctest"
-               BlueprintName = "PerformanceTests"
-               ReferencedContainer = "container:Performance.xcodeproj">
+               BlueprintIdentifier = "FB0D40F82C2A5A4300AB7559"
+               BuildableName = "SwiftTestingTests.xctest"
+               BlueprintName = "SwiftTestingTests"
+               ReferencedContainer = "container:CompilePerformance.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,6 +55,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "FB0D40F82C2A5A4300AB7559"
+            BuildableName = "SwiftTestingTests.xctest"
+            BlueprintName = "SwiftTestingTests"
+            ReferencedContainer = "container:CompilePerformance.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
